@@ -5,6 +5,7 @@ from flask import request
 from flask import url_for
 import os
 import json
+import time
 
 app = Flask("flask-music")
 
@@ -33,6 +34,7 @@ def index():
 def song():
 	song_name = request.form.get('song')
 	found_songs = find_songs(song_name)
+	time.sleep(5)
 	return found_songs
 
 

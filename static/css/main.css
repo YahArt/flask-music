@@ -21,3 +21,7 @@
 #noSongsFound {
     display: none;
 }
+
+#spinner {
+    display: none;
+}

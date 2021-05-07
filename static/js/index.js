@@ -3,6 +3,7 @@ const songFormular = $("#songFormular");
 const songInput = $("#songInput");
 const tableBody = $("#tableBody");
 const noSongsFound = $("#noSongsFound");
+const spinner = $("#spinner");
 
 function populateTable(songs) {
     songs.forEach(song => {
@@ -18,7 +19,9 @@ function clearTable() {
 songFormular.submit(function(event) {
     event.preventDefault();
     const song = songInput.val();
+    spinner.show();
     $.post("/songs", { song: song }, function(data) {
+        spinner.hide();
         clearTable();
         if (data.songs && data.songs.length > 0) {
             populateTable(data.songs);
@@ -30,6 +33,7 @@ songFormular.submit(function(event) {
         }
 
     }).fail(function(error) {
+        spinner.hide();
         console.log("Something went wrong...");
     });
 });
