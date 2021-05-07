@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Flask Music - Home</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/normalize/css/normalize.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/uikit/css/uikit.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css')}}">
+</head>
+
+<body>
+    <nav class="uk-navbar-container" uk-navbar>
+        <div class="uk-navbar-left">
+            <a class="uk-navbar-item uk-logo" href="#">Flask Music</a>
+        </div>
+        <div class="uk-navbar-center">
+            <ul class="uk-navbar-nav">
+                <li class="uk-active"><a href="#">Home /</a></li>
+                <li><a href="{{ url_for('data') }}">Data /</a></li>
+            </ul>
+        </div>
+        <div class="uk-navbar-right">
+            <ul class="uk-navbar-nav">
+                <a class="uk-navbar-item uk-logo" href="#"><span uk-icon="icon: location"></span></a>
+            </ul>
+        </div>
+    </nav>
+    <div class="uk-container">
+        <form id="songFormular">
+            <div class="uk-margin">
+                <input class="uk-input" type="text" placeholder="Input" name="song" id="songInput">
+            </div>
+            <button class="uk-button uk-button-secondary uk-margin-large-top" type="submit">Find Song</button>
+        </form>
+    </div>
+
+    <h1 id="noSongsFound">No songs found...</h1>
+
+    <table class="uk-table" id="songTable">
+        <thead>
+            <tr>
+                <th>Artist</th>
+                <th>Song</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+        </tbody>
+    </table>
+    <script type="text/javascript" src="{{ url_for('static', filename='vendor/jquery/js/jquery.min.js')}}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='vendor/uikit/js/uikit.min.js')}}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='vendor/uikit/js/uikit-icons.min.js')}}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/index.js')}}"></script>
+</body>
+
+</html>

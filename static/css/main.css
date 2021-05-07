@@ -1,0 +1,23 @@
+:root {
+    --navbar-height: 80px;
+}
+
+.uk-navbar-container {
+    background: white !important;
+}
+
+.uk-logo {
+    color: black;
+}
+
+.uk-navbar-nav li.uk-active a {
+    color: black;
+}
+
+#songTable {
+    display: none;
+}
+
+#noSongsFound {
+    display: none;
+}
